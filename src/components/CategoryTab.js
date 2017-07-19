@@ -6,9 +6,14 @@ class CategoryTab extends Component {
 	render() {
 
 		return  (
-			<div>
-                <Button>{this.props.category}</Button>
-			</div>
+			<Button 
+                onClick={() => {
+                    console.log(this.props.category)
+                    this.props.changeCategory(this.props.category);
+                    }}
+                >
+                {this.props.category}
+            </Button>
 		)
 	}
 }
