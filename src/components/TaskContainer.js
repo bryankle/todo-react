@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import TaskField from './TaskField';
+import CategoryTab from  './CategoryTab';
 /*
 	TaskContainer
 		TaskField
@@ -29,6 +30,7 @@ class TaskContainer extends Component {
 		return  (
 			<div>
 				<h1>From TaskContainer</h1>
+				
 				<TaskField />
 				<ul>
 				</ul>	
