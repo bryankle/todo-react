@@ -10,10 +10,20 @@ class Tasklist extends Component {
 		}
 	}
 
+	renderAllTasks() {
+		console.log('renderAllTasks running')
+		let displayTasks = [];
+		for (let task in this.props.allTasks) {
+			displayTasks.push(task);
+		}
+		return displayTasks;
+	}
+
 	render() {
+		console.log(this.props.allTasks)
 		return  (
 			<ul>
-				<TaskItem />
+				{this.renderAllTasks()}
 			</ul>	
 		)
 	}

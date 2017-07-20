@@ -49,7 +49,7 @@ class TaskContainer extends Component {
 				<CategoryTab changeCategory={this.changeCategory} category={'Completed'}/>
 				<CategoryTab changeCategory={this.changeCategory} category={'All'}/>
 				<TaskField addTask={this.props.addTask}/>
-				<TaskList />
+				<TaskList allTasks={this.props.allTasks}/>
 			</div>
 		)
 	}

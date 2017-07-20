@@ -5,7 +5,7 @@ class TaskItem extends Component {
 	render() {
 		return  (
 			<li>
-				ewqewadasdsadas
+				{this.props.task}
 			</li>
 		)
 	}
