@@ -39,7 +39,7 @@ class TaskContainer extends Component {
 	// }
 
 	render() {
-		console.log(this.props.allTasks)
+		console.log(this.props)
 		console.log('Category is currently: ' + this.state.category)
 		console.log('From Redux... ' + this.props.allTasks)
 		return  (
@@ -48,7 +48,7 @@ class TaskContainer extends Component {
 				<CategoryTab changeCategory={this.changeCategory} category={'Active'}/>
 				<CategoryTab changeCategory={this.changeCategory} category={'Completed'}/>
 				<CategoryTab changeCategory={this.changeCategory} category={'All'}/>
-				<TaskField />
+				<TaskField addTask={this.props.addTask}/>
 				<TaskList />
 			</div>
 		)
