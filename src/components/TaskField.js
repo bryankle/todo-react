@@ -13,12 +13,22 @@ class TaskField extends Component {
 	_handleChange = (e) => {
 		this.setState({newTask: e.target.value})
 	}
+	_handleKeyPress = (e) => {
+		if (e.charCode === 13) {
+			alert('Success!')
+		}
+	}
 
 	render() {
 		return  (
 			<div>
 				<FormGroup bsSize="large">
-			      <FormControl onChange={this._handleChange} type="text" placeholder="Large text" />
+			      <FormControl 
+						onChange={this._handleChange} 
+						onKeyPress={this._handleKeyPress}
+						type="text" 
+						placeholder="What are we doing now?" 
+					/>
 			    </FormGroup>
 				{this.state.newTask}
 			</div>
