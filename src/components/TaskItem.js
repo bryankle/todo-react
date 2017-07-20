@@ -4,11 +4,9 @@ import React, { Component } from 'react';
 class TaskItem extends Component {
 	render() {
 		return  (
-			<div>
-				<li>
-
-				</li>
-			</div>
+			<li>
+				ewqewadasdsadas
+			</li>
 		)
 	}
 }

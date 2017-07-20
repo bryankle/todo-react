@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
-import TaskField from './TaskField';
-import CategoryTab from  './CategoryTab';
+import TaskField from '../components/TaskField';
+import TaskList from '../components/TaskList';
+import CategoryTab from  '../components/CategoryTab';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addTask } from '../actions/add-task';
 /*
 	TaskContainer
 		TaskField
 		TaskList
 			TaskItem (multiple)
 */
+
+// Introduce redux function to add and pass down to TaskField
 
 class TaskContainer extends Component {
 
@@ -33,7 +39,9 @@ class TaskContainer extends Component {
 	// }
 
 	render() {
+		console.log(this.props.allTasks)
 		console.log('Category is currently: ' + this.state.category)
+		console.log('From Redux... ' + this.props.allTasks)
 		return  (
 			<div>
 				<h1>From TaskContainer</h1>
@@ -41,14 +49,23 @@ class TaskContainer extends Component {
 				<CategoryTab changeCategory={this.changeCategory} category={'Completed'}/>
 				<CategoryTab changeCategory={this.changeCategory} category={'All'}/>
 				<TaskField />
-				<ul>
-				</ul>	
+				<TaskList />
 			</div>
 		)
 	}
 }
 
-export default TaskContainer;
+function mapStateToProps(state) {
+  return {
+    allTasks: state.allTasks
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({addTask}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TaskContainer)
 // For now, focus on allowing user to add and delete task; no sorting yet
 // Let 'tasks' be a state object that contains information related to each individual task
 /* Example

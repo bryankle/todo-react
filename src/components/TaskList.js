@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
+import TaskItem from './TaskItem';
 
-class TaskContainer extends Component {
+class Tasklist extends Component {
 
 	constructor(props) {
 		super(props)
@@ -11,11 +12,11 @@ class TaskContainer extends Component {
 
 	render() {
 		return  (
-			<div>
-			
-			</div>	
+			<ul>
+				<TaskItem />
+			</ul>	
 		)
 	}
 }
 
-export default TaskContainer;
+export default Tasklist;
