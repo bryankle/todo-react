@@ -17,7 +17,6 @@ class TaskField extends Component {
 		if (e.charCode === 13) {
 			this.props.addTask(this.state.newTask)
 			this.setState({newTask: ''})
-			alert('Success!')
 		}
 	}
 
@@ -30,7 +29,7 @@ class TaskField extends Component {
 						onKeyPress={this._handleKeyPress}
 						type="text" 
 						placeholder="What are we doing now?" 
-						value={this.state.newTask}
+						value={this.state.newTaskrre}
 					/>
 			    </FormGroup>
 				{this.state.newTask}
