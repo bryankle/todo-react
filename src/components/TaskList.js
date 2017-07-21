@@ -30,6 +30,14 @@ class Tasklist extends Component {
 					/>
 				);
 			}
+			else if (this.props.category == 'All' && (this.props.allTasks[thisTask].completed == true || this.props.allTasks[thisTask].completed == false)) {
+				displayTasks.push(
+					<TaskItem 
+						task={thisTask} 
+						completeTask={this.props.completeTask}
+					/>
+				);
+			}
 		}
 		return displayTasks;
 	}
