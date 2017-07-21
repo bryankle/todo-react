@@ -29,7 +29,7 @@ class TaskField extends Component {
 						onKeyPress={this._handleKeyPress}
 						type="text" 
 						placeholder="What are we doing now?" 
-						value={this.state.newTaskrre}
+						value={this.state.newTask}
 					/>
 			    </FormGroup>
 				{this.state.newTask}
