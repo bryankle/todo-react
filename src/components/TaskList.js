@@ -16,11 +16,19 @@ class Tasklist extends Component {
 		for (let thisTask in this.props.allTasks) {
 			if (this.props.category == 'Active' && this.props.allTasks[thisTask].completed == false) {
 				displayTasks.push(
-				<TaskItem 
-					task={thisTask} 
-					completeTask={this.props.completeTask}
-				/>
-			);
+					<TaskItem 
+						task={thisTask} 
+						completeTask={this.props.completeTask}
+					/>
+				);
+			}
+			else if (this.props.category == 'Completed' && this.props.allTasks[thisTask].completed == true) {
+				displayTasks.push(
+					<TaskItem 
+						task={thisTask} 
+						completeTask={this.props.completeTask}
+					/>
+				);
 			}
 		}
 		return displayTasks;
