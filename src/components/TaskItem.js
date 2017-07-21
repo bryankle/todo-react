@@ -4,7 +4,12 @@ import React, { Component } from 'react';
 class TaskItem extends Component {
 	render() {
 		return  (
-			<li onClick={() => {alert(this.props.task, 'clicked!')}}>
+			<li onClick={() => {
+				
+				this.props.completeTask(this.props.task)
+				console.log(this)
+				
+				}}>
 				{this.props.task}
 			</li>
 		)

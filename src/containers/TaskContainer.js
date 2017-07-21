@@ -6,6 +6,7 @@ import CategoryTab from  '../components/CategoryTab';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addTask } from '../actions/add-task';
+import { completeTask } from '../actions/complete-task';
 /*
 	TaskContainer
 		TaskField
@@ -49,7 +50,10 @@ class TaskContainer extends Component {
 				<CategoryTab changeCategory={this.changeCategory} category={'Completed'}/>
 				<CategoryTab changeCategory={this.changeCategory} category={'All'}/>
 				<TaskField addTask={this.props.addTask}/>
-				<TaskList allTasks={this.props.allTasks}/>
+				<TaskList 
+					allTasks={this.props.allTasks}
+					completeTask={this.props.completeTask}
+				/>
 			</div>
 		)
 	}
@@ -62,7 +66,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({addTask}, dispatch)
+  return bindActionCreators({addTask, completeTask}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskContainer)
