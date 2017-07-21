@@ -14,12 +14,14 @@ class Tasklist extends Component {
 		console.log('renderAllTasks running')
 		let displayTasks = [];
 		for (let thisTask in this.props.allTasks) {
-			displayTasks.push(
+			if (this.props.category == 'Active' && this.props.allTasks[thisTask].completed == false) {
+				displayTasks.push(
 				<TaskItem 
 					task={thisTask} 
 					completeTask={this.props.completeTask}
 				/>
 			);
+			}
 		}
 		return displayTasks;
 	}
