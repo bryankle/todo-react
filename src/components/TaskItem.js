@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class TaskItem extends Component {
 	render() {
 		return  (
-			<li>
+			<li onClick={() => {alert(this.props.task, 'clicked!')}}>
 				{this.props.task}
 			</li>
 		)
